@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>UmbreONE</title>
+  <link href="styles/css/bootstrap.min.css" rel="stylesheet">
+  <link href="styles/font-awesome/css/font-awesome.css" rel="stylesheet">
+  <link href="styles/css/animate.css" rel="stylesheet">
+  <link href="styles/css/style.css" rel="stylesheet">
+</head>
+<body ng-app="UmbreoneApp">
+<div id="wrapper">
+  <nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+      <ul class="nav metismenu" id="side-menu">
+        <li class="nav-header">
+          <div class="dropdown profile-element">
+            <span>
+              <img alt="image" class="img-circle" src="images/img/profile_small.jpg" />
+            </span>
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+              <span class="clear">
+                <span class="block m-t-xs">
+                  <strong class="font-bold">Edivan de Castro</strong>
+                </span>
+                <span class="text-muted text-xs block">
+                  Configurações
+                  <b class="caret"></b>
+                </span>
+              </span>
+            </a>
+            <ul class="dropdown-menu animated fadeInRight m-t-xs">
+              <li><a href="#">Perfil do usuário</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Sair</a></li>
+            </ul>
+          </div>
+          <div class="logo-element">
+            EC
+          </div>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-pencil-square-o"></i>
+            <span class="nav-label">Ordem de Serviço</span>
+            <span class="fa arrow"></span>
+          </a>
+          <ul class="nav nav-second-level">
+            <li><a href="#/registrar-os">Registrar O.S</a></li>
+            <li><a href="listar-os.html">Listar O.S</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-user"></i>
+            <span class="nav-label">Cliente</span>
+            <span class="fa arrow"></span>
+          </a>
+          <ul class="nav nav-second-level">
+            <li><a href="#">Registrar Cliente</a></li>
+            <li><a href="#">Listar Cliente</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-shopping-cart"></i>
+            <span class="nav-label">Produto</span>
+            <span class="fa arrow"></span>
+          </a>
+          <ul class="nav nav-second-level">
+            <li><a href="#">Registrar Produto</a></li>
+            <li><a href="#">Listar Produto</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-car"></i>
+            <span class="nav-label">Veículo</span>
+            <span class="fa arrow"></span>
+          </a>
+          <ul class="nav nav-second-level">
+            <li><a href="#">Registrar Veículo</a></li>
+            <li><a href="#">Listar Veículo</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-registered"></i>
+            <span class="nav-label">Marca</span>
+            <span class="fa arrow"></span>
+          </a>
+          <ul class="nav nav-second-level">
+            <li><a href="#">Registrar Marca</a></li>
+            <li><a href="#">Listar Marca</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-maxcdn"></i>
+            <span class="nav-label">Modelo</span>
+            <span class="fa arrow"></span>
+          </a>
+          <ul class="nav nav-second-level">
+            <li><a href="#">Registrar Modelo</a></li>
+            <li><a href="#">Listar Modelo</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-credit-card"></i>
+            <span class="nav-label">Forma de Pagamento</span>
+            <span class="fa arrow"></span>
+          </a>
+          <ul class="nav nav-second-level">
+            <li><a href="#">Registrar Forma de Pagamento</a></li>
+            <li><a href="#">Listar Forma de Pagamento</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-desktop"></i>
+            <span class="nav-label">Sistema</span>
+            <span class="fa arrow"></span>
+          </a>
+          <ul class="nav nav-second-level">
+            <li><a href="#">Registrar Usuário</a></li>
+            <li><a href="#">Listar Usuário</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-line-chart"></i>
+            <span class="nav-label">Relatório</span>
+            <span class="fa arrow"></span>
+          </a>
+          <ul class="nav nav-second-level">
+            <li><a href="#">O.S</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div id="page-wrapper" class="gray-bg dashbard-1">
+    <div class="row border-bottom">
+      <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+          <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+          <form role="search" class="navbar-form-custom" action="search_results.html">
+            <div class="form-group">
+              <input type="text" placeholder="Pesquisar..." class="form-control" name="top-search" id="top-search">
+            </div>
+          </form>
+        </div>
+        <ul class="nav navbar-top-links navbar-right">
+          <li>
+            <a href="#">
+              <i class="fa fa-sign-out"></i> Sair
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="wrapper wrapper-content">
+          {{ 1 + 2 }}
+          <div ng-view></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Angular -->
+<script src="components/angular/angular.js"></script>
+<script src="components/angular/angular-sanitize.min.js"></script>
+<script src="components/angular/angular-translate.min.js"></script>
+<script src="components/angular/angular-route.min.js"></script>
+<!-- Angular App Script -->
+<script src="scripts/app.js"></script>
+<script src="scripts/controllers/register-os.js"></script>
+
+<!-- jQuery and Bootstrap -->
+<script src="scripts/js/jquery/jquery-2.1.1.min.js"></script>
+<script src="scripts/js/bootstrap/bootstrap.min.js"></script>
+<script src="scripts/js/bootstrap/ui-bootstrap-tpls-1.1.2.min.js"></script>
+<!-- Plugins -->
+<script src="scripts/js/plugins/oclazyload/ocLazyLoad.min.js"></script>
+<script src="scripts/js/plugins/angular-idle/angular-idle.js"></script>
+<script src="scripts/js/plugins/jquery-ui/jquery-ui.js"></script>
+<script src="scripts/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="scripts/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="scripts/js/select2.js"></script>
+<script src="scripts/js/plugins/pace/pace.min.js"></script>
+<!-- Custom and plugin javascript -->
+<script src="scripts/js/inspinia.js"></script>
+
+</body>
+</html>
