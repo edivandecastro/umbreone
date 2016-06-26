@@ -92,7 +92,7 @@
             <span class="fa arrow"></span>
           </a>
           <ul class="nav nav-second-level">
-            <li><a href="#">Registrar Marca</a></li>
+            <li><a href="#/registrar-marca">Registrar Marca</a></li>
             <li><a href="#">Listar Marca</a></li>
           </ul>
         </li>
@@ -165,7 +165,6 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="wrapper wrapper-content">
-          {{ 1 + 2 }}
           <div ng-view></div>
         </div>
       </div>
@@ -174,13 +173,15 @@
 </div>
 
 <!-- Angular -->
-<script src="components/angular/angular.js"></script>
+<script src="components/angular/angular.min.js"></script>
 <script src="components/angular/angular-sanitize.min.js"></script>
 <script src="components/angular/angular-translate.min.js"></script>
 <script src="components/angular/angular-route.min.js"></script>
+<script src="components/angular/angular-resource.js"></script>
 <!-- Angular App Script -->
 <script src="scripts/app.js"></script>
-<script src="scripts/controllers/register-os.js"></script>
+<script src="scripts/services.js"></script>
+<script src="scripts/controllers.js"></script>
 
 <!-- jQuery and Bootstrap -->
 <script src="scripts/js/jquery/jquery-2.1.1.min.js"></script>
