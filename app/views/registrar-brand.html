@@ -6,55 +6,60 @@
   <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
   <i class="fa fa-times-circle fa-lg fa-1x"></i> Erro ao efetuar cadastro!
 </div>
-<form ng-submit="registerBrand.save()">
-  <div class="row">
-    <div class="col-lg-12">
-      <div class="ibox float-e-margins">
-        <div class="ibox-title">
-          <h5><i class="fa fa-registered"></i> Marca do Veículo</h5>
-          <div class="ibox-tools">
-            <a class="collapse-link">
-              <i class="fa fa-chevron-up"></i>
-            </a>
-          </div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <div class="ibox float-e-margins">
+      <div class="ibox-title">
+        <h5><i class="fa fa-registered"></i> Marca do Veículo</h5>
+        <div class="ibox-tools">
+          <a class="collapse-link">
+            <i class="fa fa-chevron-up"></i>
+          </a>
         </div>
-        <div class="ibox-content">
-          <div>
-            <div class="row">
-              <div class="col-lg-6">
-                <div class="col-lg-5">
-                  <div class="form-group">
-                    <label>Descrição da Marca:</label>
-                    <div class="input-group m-b">
+      </div>
+      <div class="ibox-content">
+        <div>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="col-lg-5">
+                <div class="form-group">
+                  <label>Descrição da Marca:</label>
+                  <div class="input-group m-b">
+                    <form ng-submit="registerBrand.save()">
                       <input type="text" class="form-control" ng-model="registerBrand.obj.brand.name">
                       <span class="input-group-btn">
                         <button class="btn btn-primary" type="submit">
                           <i class="fa fa-floppy-o"></i>
                         </button>
                       </span>
-                    </div>
+                    </form>
                   </div>
                 </div>
               </div>
-              <div class="col-lg-4">
-                <table class="table table-bordered table-responsible">
-                  <thead>
-                  <tr>
-                    <th>Nome</th>
-                    <th></th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr ng-repeat="brand in registerBrand.brands">
-                    <td>{{ brand.name }}</td>
-                    <td></td>
-                  </tr>
-                </table>
-              </div>
+            </div>
+            <div class="col-lg-4">
+              <table class="table table-bordered table-responsible">
+                <thead>
+                <tr>
+                  <th>Nome</th>
+                  <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="brand in registerBrand.brands">
+                  <td>{{ brand.name }}</td>
+                  <td>
+                    <button class="btn btn-danger" ng-click="registerBrand.destroy(brand)" type="submit">
+                      <i class="fa fa-trash-o"></i>
+                    </button>
+                  </td>
+                </tr>
+              </table>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</form>
+</div>
