@@ -27,7 +27,7 @@
                   <label>Descrição da Marca:</label>
                   <div class="input-group m-b">
                     <form ng-submit="registerBrand.save()">
-                      <input type="text" class="form-control" ng-model="registerBrand.obj.brand.name">
+                      <input type="text" class="form-control" ng-model="brand.name">
                       <span class="input-group-btn">
                         <button class="btn btn-primary" type="submit">
                           <i class="fa fa-floppy-o"></i>
@@ -53,6 +53,9 @@
                     <button class="btn btn-danger" ng-click="registerBrand.destroy(brand)" type="submit">
                       <i class="fa fa-trash-o"></i>
                     </button>
+                    <a class="btn btn-primary" ng-click="registerBrand.edit(brand)" type="submit">
+                      <i class="fa fa-edit"></i>
+                    </a>
                   </td>
                 </tr>
               </table>
