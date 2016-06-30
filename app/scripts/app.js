@@ -1,4 +1,10 @@
-angular.module('UmbreoneApp', ['ngRoute', 'ngResource', 'UmbreoneApp.services', 'UmbreoneApp.controllers'])
+angular.module('UmbreoneApp', [
+    'ui.select',
+    'ngSanitize',
+    'ngRoute',
+    'ngResource',
+    'UmbreoneApp.services',
+    'UmbreoneApp.controllers'])
 
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider
@@ -10,7 +16,12 @@ angular.module('UmbreoneApp', ['ngRoute', 'ngResource', 'UmbreoneApp.services', 
             .when('/registrar-marca', {
                 templateUrl: 'views/registrar-brand.html',
                 controller: 'RegisterBrandCtrl',
-                controllerAs: 'registerBrand'
+                controllerAs: 'registerBrand',
+            })
+            .when('/registrar-modelo', {
+                templateUrl: 'views/registrar-model.html',
+                controller: 'RegisterModelCtrl',
+                controllerAs: 'registerModel',
             })
             .otherwise({
                 rediretTo: '/'

@@ -67,4 +67,72 @@ angular.module('UmbreoneApp.controllers', [])
                 }
             }
         };
+    }])
+    .controller('RegisterModelCtrl', ['Model', 'Brand', '$scope', '$timeout', function(Model, Brand, $scope, $timeout) {
+        var self = this;
+
+        $scope.brands = Brand.query();
+        $scope.models = Model.query();
+        $scope.model = new Model();
+        $scope.selected = { brand: null };
+
+        self.save = function() {
+            $scope.model.enterprise_id = 1;
+            $scope.model.brand_id = $scope.selected.brand.id;
+            if (modelArePersisted()) {
+                self.update();
+            } else {
+                $scope.model.$save(function() {
+                    addModelInModels();
+                    cleanModel();
+                    $scope.brands = Brand.query();
+                    showMessageSuccess();
+                });
+            }
+        };
+
+        self.update = function() {
+            $scope.model.$update(function() {
+                updateModelInModels();
+                cleanModel();
+            });
+        };
+
+        self.switchBool = function(value) {
+            $scope[value] = !$scope[value];
+        };
+
+        var updateModelInModels = function() {
+            $scope.models[getModelIdInModels($scope.model)] = $scope.model;
+        };
+
+        var cleanModel = function() {
+            $scope.model = new Model();
+        };
+
+        var modelArePersisted = function() {
+            return $scope.model.id;
+        };
+
+        var addModelInModels = function() {
+            $scope.model.brand = $scope.selected.brand;
+            $scope.models.push($scope.model);
+        };
+
+        var getModelIdInModels = function (model) {
+            for (var i = 0; i < self.models.length; i++) {
+                if (self.models[i].id == model.id) {
+                    return i;
+                }
+            }
+        };
+
+        var showMessageSuccess = function() {
+            $scope.successTextAlert = "Cadastro efetuado com sucesso!";
+            $scope.showSuccessAlert = true;
+            $timeout(function() {
+                self.switchBool('showSuccessAlert');
+            }, 3000);
+        };
     }]);
+
