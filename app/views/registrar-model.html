@@ -1,9 +1,4 @@
-<div class="alert alert-success alert-dismissable" ng-show="showSuccessAlert">
-  <button class="close" type="button" ng-click="registerModel.switchBool('showSuccessAlert')">
-    ×
-  </button>
-  <i class="fa fa-check-circle fa-lg fa-1x"></i> {{ successTextAlert }}
-</div>
+<div ng-include="'../app/views/partials/_message_success.html'"></div>
 <div class="alert alert-danger alert-dismissable">
   <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
   <i class="fa fa-times-circle fa-lg fa-1x"></i> Erro ao efetuar cadastro!

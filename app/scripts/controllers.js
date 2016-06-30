@@ -130,9 +130,9 @@ angular.module('UmbreoneApp.controllers', [])
         var showMessageSuccess = function() {
             $scope.successTextAlert = "Cadastro efetuado com sucesso!";
             $scope.showSuccessAlert = true;
+
             $timeout(function() {
                 self.switchBool('showSuccessAlert');
             }, 3000);
         };
     }]);
-
