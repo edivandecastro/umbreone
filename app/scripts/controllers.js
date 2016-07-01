@@ -98,6 +98,12 @@ angular.module('UmbreoneApp.controllers', [])
             });
         };
 
+        self.destroy = function(model) {
+            model.$delete(function () {
+                removeModelInModels(model);
+            });
+        };
+
         self.switchBool = function(value) {
             $scope[value] = !$scope[value];
         };
@@ -119,9 +125,13 @@ angular.module('UmbreoneApp.controllers', [])
             $scope.models.push($scope.model);
         };
 
+        var removeModelInModels = function(model) {
+            $scope.models.splice(getModelIdInModels(model), 1);
+        };
+
         var getModelIdInModels = function (model) {
-            for (var i = 0; i < self.models.length; i++) {
-                if (self.models[i].id == model.id) {
+            for (var i = 0; i < $scope.models.length; i++) {
+                if ($scope.models[i].id == model.id) {
                     return i;
                 }
             }
