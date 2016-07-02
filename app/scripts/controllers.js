@@ -80,22 +80,33 @@ angular.module('UmbreoneApp.controllers', [])
             $scope.model.enterprise_id = 1;
             $scope.model.brand_id = $scope.selected.brand.id;
             if (modelArePersisted()) {
-                self.update();
+                var brand = $scope.selected.brand;
+                self.update(brand);
             } else {
                 $scope.model.$save(function() {
                     addModelInModels();
                     cleanModel();
+                    cleanBrand();
                     $scope.brands = Brand.query();
                     showMessageSuccess();
                 });
             }
         };
 
-        self.update = function() {
+        self.update = function(brand) {
             $scope.model.$update(function() {
+                $scope.model.brand = brand;
                 updateModelInModels();
                 cleanModel();
+                cleanBrand();
             });
+        };
+
+        self.edit = function(model) {
+            $scope.model = new Model();
+            $scope.model.id = model.id;
+            $scope.model.name = model.name;
+            $scope.selected = { brand: model.brand };
         };
 
         self.destroy = function(model) {
@@ -110,11 +121,16 @@ angular.module('UmbreoneApp.controllers', [])
 
         var updateModelInModels = function() {
             $scope.models[getModelIdInModels($scope.model)] = $scope.model;
+            $scope.models[getModelIdInModels($scope.model)].brand = $scope.model.brand;
         };
 
         var cleanModel = function() {
             $scope.model = new Model();
         };
+
+        var cleanBrand = function() {
+            $scope.selected = { brand: null };
+        }
 
         var modelArePersisted = function() {
             return $scope.model.id;
